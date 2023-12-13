@@ -1,52 +1,32 @@
 {
   "name": "react-textgame-components",
-  "version": "0.0.1",
-  "description": "",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
+  "version": "0.1.0",
+  "description": "Demo page of react-textgame-components",
   "scripts": {
-    "build": "yarn build:esm && yarn build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
-    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run lint && npm run prettier"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --dist-dir docs --public-url ."
   },
-  "keywords": [
-    "react",
-    "textgame",
-    "components",
-    "react-textgame"
-  ],
-  "author": "laruss",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/laruss/react-textgame-components.git"
   },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
+  "keywords": [],
+  "author": "laruss",
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "eslint": "^8.55.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.1.1",
+    "parcel": "^2.10.3",
+    "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-textgame-components": "^0.0.1",
     "typescript": "^5.3.3"
   }
 }
