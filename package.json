@@ -1,0 +1,18 @@
+{
+  "name": "react-textgame-components",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "laruss",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.3"
+  }
+}
