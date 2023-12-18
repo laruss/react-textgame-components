@@ -1,6 +1,6 @@
 {
   "name": "react-textgame-components",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Components from React Textgame Engine",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -47,10 +47,12 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@mui/material": "^5.15.0",
     "framer-motion": "^10.16.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-loading-skeleton": "^3.3.1",
+    "react-svg": "^16.1.32",
     "react-use": "^17.4.2",
     "styled-components": "^6.1.1"
   }
