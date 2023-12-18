@@ -6,10 +6,10 @@ export type SayVariants = 'common' | 'bigName' | 'messenger';
 export type SideVariants = 'left' | 'right';
 
 interface CommonProps {
-    characterName: string | undefined;
-    characterPicture: string | undefined;
-    style: React.CSSProperties;
-    variant: SayVariants;
+    characterName?: string | undefined;
+    characterPicture?: string | undefined;
+    style?: React.CSSProperties;
+    variant?: SayVariants;
     side?: SideVariants;
 }
 
