@@ -1,18 +1,19 @@
+import { css } from '@mui/material';
 import { ButtonStyleProps } from './types';
-import { css } from 'styled-components';
 
-export const getButtonStyle = (props: ButtonStyleProps) => css`
-    background-color: ${props.background.idle};
-    color: ${props.color};
+export const getButtonStyle = ({ background, shadow, color }: ButtonStyleProps) => css`
+    background-color: ${background.idle};
+    color: ${color};
 
     &:hover {
-        box-shadow: ${props.shadow.hover} 0 2px 8px;
+        box-shadow: ${shadow.hover} 0 2px 8px;
     }
+
     &:active {
-        background-color: ${props.background.active};
+        background-color: ${background.active};
     }
 
     &:focus {
-        box-shadow: ${props.shadow.focus} 0 0 0 3px;
+        box-shadow: ${shadow.focus} 0 0 0 3px;
     }
 `;

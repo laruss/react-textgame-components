@@ -1,25 +1,26 @@
 import 'react-loading-skeleton/dist/skeleton.css';
+import { useGContext } from '../GContext';
 import { Container, Img, LoadingContainer } from './Elements';
 import { GameImageProps } from './types';
 import useLoading from './useLoading';
 import NotFound from './NotFound';
 import { CircularProgress } from '@mui/material';
-import React from 'react';
 
-const GImage = ({ src, style = {}, imageRadius, className = '', imageStyles }: GameImageProps) => {
+const GImage = ({ src, sx = {}, imageRadius, className = '', imageStyles }: GameImageProps) => {
     const { imgSrc, isError, loaded } = useLoading({ src });
+    const { imageLoaderText } = useGContext();
 
     return (
-        <Container style={style} className={className}>
+        <Container sx={sx} className={className}>
             {isError ? (
                 <NotFound />
             ) : (
-                <Img style={imageStyles} loaded={loaded} imageRadius={imageRadius} src={imgSrc} alt={imgSrc} />
+                <Img sx={imageStyles} loaded={loaded} imageRadius={imageRadius} src={imgSrc} alt={imgSrc} />
             )}
             {!loaded ? (
                 <LoadingContainer>
-                    Image is loading...
-                    <CircularProgress style={{ alignSelf: 'center' }} color='inherit' thickness={4} size={60} />
+                    {imageLoaderText}
+                    <CircularProgress sx={{ alignSelf: 'center' }} color='inherit' thickness={4} size={60} />
                 </LoadingContainer>
             ) : null}
         </Container>

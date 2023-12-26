@@ -1,30 +1,35 @@
-import React, { KeyboardEvent, useCallback, useState } from 'react';
+import { Box } from '@mui/material';
+import { useGContext } from '../GContext';
+import { KeyboardEvent, useCallback, useState } from 'react';
 import useHandleChange from './useHandleChange';
-import Container from './Container';
 import Input from './Input';
 import { GInputProps } from './types';
 import GButton from '../GButton';
 
 const BUTTON_HEIGHT = `40px`;
 
-const GInput = ({
-    notify,
-    allowOnlyNextSymbols,
-    buttonCaption = 'Submit',
-    buttonVariant = 'dark',
-    callback,
-    confirmOnEnter = true,
-    disableAfterConfirm = false,
-    onlyAlphabeticSymbols = false,
-    onlyNumbers = false,
-    placeholder = 'Input something 😊',
-    readOnly = false,
-    restrictWhiteSpaces = false,
-    style = {},
-    styleButton = {},
-    type = '',
-    initValue = '',
-}: GInputProps) => {
+const GInput = (props: GInputProps) => {
+    const { buttonVariant: defaultBV } = useGContext();
+
+    const {
+        notify,
+        allowOnlyNextSymbols,
+        buttonCaption = 'Submit',
+        buttonVariant = defaultBV,
+        callback,
+        confirmOnEnter = true,
+        disableAfterConfirm = false,
+        onlyAlphabeticSymbols = false,
+        onlyNumbers = false,
+        placeholder = 'Input something 😊',
+        readOnly = false,
+        restrictWhiteSpaces = false,
+        sx = {},
+        styleButton = {},
+        type = '',
+        initValue = '',
+    } = props;
+
     const [value, setValue] = useState(initValue);
     const [_readOnly, set_readOnly] = useState(false);
 
@@ -43,7 +48,7 @@ const GInput = ({
         [confirmOnEnter, onClick],
     );
 
-    const handleChange = useHandleChange({
+    const onChange = useHandleChange({
         allowOnlyNextSymbols,
         onlyAlphabeticSymbols,
         onlyNumbers,
@@ -53,7 +58,7 @@ const GInput = ({
     });
 
     return (
-        <Container>
+        <Box sx={{ width: 'content-box' }}>
             <Input
                 className='game-input'
                 value={value}
@@ -61,19 +66,19 @@ const GInput = ({
                 placeholder={placeholder}
                 ro={readOnly || _readOnly}
                 readOnly={readOnly || _readOnly}
-                onChange={handleChange}
-                style={style}
+                onChange={onChange}
+                sx={sx}
                 onKeyDown={handleKeyPress}
             />
             <GButton
                 variant={buttonVariant}
-                style={{ height: BUTTON_HEIGHT, ...styleButton }}
+                sx={{ height: BUTTON_HEIGHT, ...styleButton }}
                 isDisabled={readOnly || _readOnly}
                 onClick={onClick}
             >
                 {buttonCaption}
             </GButton>
-        </Container>
+        </Box>
     );
 };
 

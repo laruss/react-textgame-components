@@ -1,7 +1,7 @@
-import React from 'react';
+import { SxProps } from '@mui/material';
 
 export type GBlurTextProps = {
     text: string;
     showOnClick?: boolean;
-    style?: React.CSSProperties;
+    sx?: SxProps;
 };

@@ -1,17 +1,22 @@
+import { Box } from '@mui/material';
+import { useGContext } from '../GContext';
 import { motion } from 'framer-motion';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import GButton from '../GButton';
-import { GBlockProps } from './types';
+import { Effect, GBlockProps, LoadOn } from './types';
 import { defaultProps, effects } from './utils';
 import useIsShown from './useIsShown';
 
-const GBlock = ({
-    children,
-    loadOn = 'default',
-    buttonName = 'Show more',
-    effect = 'bottomSpring',
-    style = {},
-}: GBlockProps) => {
+const GBlock = (props: GBlockProps) => {
+    const { block } = useGContext();
+
+    const {
+        children,
+        buttonName = block?.buttonName as string,
+        loadOn = block?.loadOn as LoadOn,
+        effect = block?.effect as Effect,
+        sx,
+    } = props;
     const { isShown, setIsShown } = useIsShown({ loadOn });
 
     const motionProps = useMemo(
@@ -20,10 +25,10 @@ const GBlock = ({
     );
 
     return (
-        <div style={{ paddingBottom: 40, position: 'relative', ...style }}>
+        <Box sx={{ paddingBottom: 40, position: 'relative', ...sx }}>
             {!isShown ? <GButton onClick={() => setIsShown(true)}>{buttonName}</GButton> : null}
             {isShown ? <motion.div {...motionProps}>{children}</motion.div> : null}
-        </div>
+        </Box>
     );
 };
 

@@ -1,21 +1,20 @@
-import React from 'react';
-import { GButtonProps } from './types';
+import { useGContext } from '../GContext';
+import { ButtonVariants, GButtonProps } from './types';
 import ButtonContainer from './ButtonContainer';
 
 const GButton = (props: GButtonProps) => {
-    const caption = String(props.children);
-    const style = props.style ? props.style : {};
-    const isDisabled = props.isDisabled ? props.isDisabled : false;
+    const { buttonVariant } = useGContext();
+    const { isDisabled = false, children, variant = buttonVariant, onClick, sx, ...otherProps } = props;
 
     return (
         <ButtonContainer
-            variant={props.variant ? props.variant : 'dark'} // FIXME: set global default variant
+            variant={variant as ButtonVariants}
             isDisabled={isDisabled}
-            style={style}
-            {...props}
-            onClick={isDisabled ? () => {} : props.onClick}
+            sx={sx}
+            {...otherProps}
+            onClick={isDisabled ? () => null : onClick}
         >
-            {caption}
+            {children}
         </ButtonContainer>
     );
 };

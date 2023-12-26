@@ -1,3 +1,4 @@
+import { useGContext } from '../GContext';
 import React, { useCallback } from 'react';
 import { UseHandleChangeProps } from './types';
 
@@ -9,25 +10,27 @@ const useHandleChange = ({
     restrictWhiteSpaces,
     setValue,
 }: UseHandleChangeProps) => {
+    const { input } = useGContext();
+
     return useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
             let result = e.target.value;
             const conditions = [
-                { check: onlyAlphabeticSymbols, reg: /[^a-z]/gi, notification: 'Only alphabetic symbols are allowed' },
-                { check: onlyNumbers, reg: /[^0-9]/gi, notification: 'Only numeric symbols are allowed' },
+                { check: onlyAlphabeticSymbols, reg: /[^a-z]/gi, notification: input?.errors.onlyAlphabeticSymbols },
+                { check: onlyNumbers, reg: /[^0-9]/gi, notification: input?.errors.onlyNumbers },
                 {
                     check: allowOnlyNextSymbols,
                     reg: new RegExp(`[^${allowOnlyNextSymbols}]`, 'gi'),
-                    notification: `Only next symbols are allowed: "${allowOnlyNextSymbols}"`,
+                    notification: `${input?.errors.allowOnlyNextSymbols}: "${allowOnlyNextSymbols}"`,
                 },
-                { check: restrictWhiteSpaces, reg: /\s/gi, notification: 'Whitespaces are not allowed' },
+                { check: restrictWhiteSpaces, reg: /\s/gi, notification: input?.errors.restrictWhiteSpaces },
             ];
 
             conditions.forEach(({ check, reg, notification }) => {
                 if (check) {
                     const afterRegexp = result.replace(reg, '');
                     if (afterRegexp !== result) {
-                        notify && notify(notification);
+                        notify && notify(notification as string);
                         result = afterRegexp;
                     }
                 }
@@ -35,7 +38,7 @@ const useHandleChange = ({
 
             setValue(result);
         },
-        [allowOnlyNextSymbols, notify, onlyAlphabeticSymbols, onlyNumbers, restrictWhiteSpaces, setValue],
+        [allowOnlyNextSymbols, notify, onlyAlphabeticSymbols, onlyNumbers, restrictWhiteSpaces, setValue, input],
     );
 };
 

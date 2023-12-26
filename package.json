@@ -1,59 +1,73 @@
 {
-  "name": "react-textgame-components",
-  "version": "0.0.7",
-  "description": "Components from React Textgame Engine",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
-  "scripts": {
-    "build": "yarn build:esm && yarn build:cjs && node copy-svg.js",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
-    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run lint && npm run prettier"
-  },
-  "keywords": [
-    "react",
-    "textgame",
-    "components",
-    "react-textgame"
-  ],
-  "author": "laruss",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/laruss/react-textgame-components.git"
-  },
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
-  "license": "MIT",
-  "devDependencies": {
-    "@types/react": "^18.2.45",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
-    "eslint": "^8.55.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-prettier": "^5.0.1",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.1.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "@mui/material": "^5.15.0",
-    "framer-motion": "^10.16.16",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-loading-skeleton": "^3.3.1",
-    "react-svg": "^16.1.32",
-    "react-use": "^17.4.2",
-    "styled-components": "^6.1.1"
-  }
+    "name": "react-textgame-components",
+    "version": "0.1.0",
+    "description": "Components from React Textgame Engine",
+    "private": false,
+    "type": "module",
+    "main": "dist/index.umd.js",
+    "module": "dist/index.es.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.es.js",
+            "require": "./dist/index.umd.js"
+        }
+    },
+    "author": "laruss",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/laruss/react-textgame-components.git"
+    },
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build && node copy-svg.js",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
+        "preview": "vite preview",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm run prettier"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.11.3",
+        "@emotion/styled": "^11.11.0",
+        "@mui/material": "^5.15.2",
+        "framer-motion": "^10.16.16",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-loading-skeleton": "^3.3.1",
+        "react-svg": "^16.1.32"
+    },
+    "devDependencies": {
+        "@mui/icons-material": "^5.15.2",
+        "@types/react": "^18.2.43",
+        "@types/react-dom": "^18.2.17",
+        "@typescript-eslint/eslint-plugin": "^6.16.0",
+        "@typescript-eslint/parser": "^6.16.0",
+        "@vitejs/plugin-react-swc": "^3.5.0",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.1.2",
+        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.5",
+        "prettier": "^3.1.1",
+        "typescript": "^5.2.2",
+        "vite": "^5.0.8",
+        "vite-plugin-dts": "^3.7.0"
+    },
+    "keywords": [
+        "react",
+        "textgame",
+        "components",
+        "react-textgame"
+    ]
 }

@@ -1,5 +1,5 @@
-import { Interpolation } from 'styled-components';
-import React, { MouseEventHandler } from 'react';
+import { SxProps } from '@mui/material';
+import { MouseEventHandler, ReactNode } from 'react';
 
 export type ButtonStyleProps = {
     background: {
@@ -16,16 +16,16 @@ export type ButtonStyleProps = {
 export type ButtonVariants = 'dark' | 'light' | 'success' | 'warning' | 'danger' | 'info';
 
 export type ButtonsObject = {
-    [p in ButtonVariants]: Interpolation<any>;
+    [p in ButtonVariants]: object;
 };
 
 export type GButtonProps = {
-    children: string | number | boolean;
+    children: ReactNode;
     id?: string;
     isDisabled?: boolean;
     onClick: MouseEventHandler<HTMLDivElement>;
     variant?: ButtonVariants;
-    style?: React.CSSProperties;
+    sx?: SxProps;
 
     [p: string]: any;
 };

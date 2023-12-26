@@ -7,27 +7,13 @@ import GInput from './components/GInput';
 import GMap from './components/GMap';
 import { GMapHotspot } from './components/GMap';
 import GP from './components/GP';
-import GSay, { SayVariants, SideVariants } from './components/GSay';
-import GTooltip from './components/GTooltip';
+import GSay, { SaySideVariants, SayVariants } from './components/GSay';
 import GVideo from './components/GVideo';
+import GProvider from './components/GContext';
+
 import { ButtonVariants } from './components/GButton/types';
 import { Effect } from './components/GBlock/types';
 
-export {
-    GBlock,
-    GBlurText,
-    GButton,
-    GImage,
-    GIcon,
-    GInput,
-    GMap,
-    GMapHotspot,
-    GP,
-    GSay,
-    GTooltip,
-    GVideo,
-    ButtonVariants,
-    Effect,
-    SayVariants,
-    SideVariants,
-};
+export { GProvider, GBlock, GBlurText, GButton, GImage, GIcon, GInput, GMap, GMapHotspot, GP, GSay, GVideo };
+
+export type { ButtonVariants, Effect, SayVariants, SaySideVariants };

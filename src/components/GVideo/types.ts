@@ -1,11 +1,14 @@
-import React from 'react';
+import { SxProps } from '@mui/material';
 
-export type GVideoProps = {
-    src: string;
+export interface IGVideo {
     autoPlay?: boolean;
     loop?: boolean;
     controls?: boolean;
     muted?: boolean;
     width?: string;
-    style?: React.CSSProperties;
-};
+}
+
+export interface GVideoProps extends IGVideo {
+    src: string;
+    sx?: SxProps;
+}

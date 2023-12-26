@@ -1,6 +1,6 @@
 import GSay from './GSay';
-import { SayVariants, SideVariants } from './types';
+import { SaySideVariants, SayVariants } from './types';
 
 export default GSay;
 
-export { SayVariants, SideVariants };
+export type { SayVariants, SaySideVariants };

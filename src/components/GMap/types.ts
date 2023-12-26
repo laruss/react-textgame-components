@@ -1,13 +1,14 @@
+import { SxProps } from '@mui/material';
 import React, { RefObject } from 'react';
 import { ButtonVariants } from '../GButton/types';
 
 export type ImageHotspotsProps = {
     image: string;
-    style?: React.CSSProperties;
+    sx?: SxProps;
     hotspots: Array<{
         x: number;
         y: number;
-        element: React.ReactElement<any, any>;
+        element: React.ReactElement<'GMapHotspot', any>;
     }>;
 };
 
@@ -16,20 +17,10 @@ export type UseResizeProps = {
     width: number;
 };
 
-export type GMapProps = {
-    image: string;
-    hotspots: Array<{
-        x: number;
-        y: number;
-        element: React.ReactElement<'GMapHotspot', any>;
-    }>;
-    style?: React.CSSProperties;
-};
-
 export type GMapHotspotProps = {
     variant?: 'button'; // TODO: add 'image'
     buttonVariant?: ButtonVariants;
     caption: string;
-    callback: () => void;
-    style?: React.CSSProperties;
+    callback: () => any;
+    sx?: SxProps;
 };

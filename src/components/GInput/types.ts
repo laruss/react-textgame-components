@@ -1,3 +1,4 @@
+import { SxProps } from '@mui/material';
 import React, { HTMLInputTypeAttribute } from 'react';
 import { ButtonVariants } from '../GButton/types';
 
@@ -21,7 +22,7 @@ export interface GInputProps extends BaseProps {
     disableAfterConfirm?: boolean;
     placeholder?: string;
     readOnly?: boolean;
-    style?: React.CSSProperties;
+    sx?: SxProps;
     styleButton?: React.CSSProperties;
     type?: HTMLInputTypeAttribute;
     initValue?: string;

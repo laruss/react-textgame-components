@@ -1,15 +1,15 @@
+import { css } from '@mui/material';
 import { GetBigNameProps, GetCommonProps, GetMessengerProps, GetSaysStylesProps } from './types';
-import { css } from 'styled-components';
 
 const getCommon = ({
     backgroundColor = '#000',
     textColor = '#fff',
     nameColor = '#fff',
     characterPictureRadius = '50px',
-    position,
+    side,
 }: GetCommonProps) => css`
     display: flex;
-    justify-content: ${position};
+    justify-content: ${side};
     padding: 10px;
     margin-bottom: 1%;
     gap: 10px;
@@ -47,14 +47,14 @@ const getCommon = ({
 
 const getBigName = ({
     backgroundColor = '#60f0b2',
-    position,
+    side,
     hasPicture,
     textColor = '#fff',
     nameColor = '#000',
     characterPictureRadius = '50px',
 }: GetBigNameProps) => css`
     display: flex;
-    justify-content: ${position};
+    justify-content: ${side};
     padding: 5px;
     gap: 10px;
     margin-top: 80px;
@@ -96,7 +96,7 @@ const getBigName = ({
         border-top: 15px solid ${backgroundColor};
         border-bottom: 15px solid transparent;
         top: 20px;
-        ${position === 'left'
+        ${side === 'left'
             ? css`
                   border-left: 15px solid transparent;
                   border-right: 15px solid ${backgroundColor};
@@ -115,11 +115,11 @@ const getMessenger = ({
     textColor = '#000',
     nameColor = '#000',
     characterPictureRadius = '50%',
-    position,
+    side,
 }: GetMessengerProps) => css`
     display: flex;
     overflow: hidden;
-    flex-direction: ${position === 'left' ? 'row' : 'row-reverse'};
+    flex-direction: ${side === 'left' ? 'row' : 'row-reverse'};
     padding: 5px;
     gap: 10px;
     margin-top: 40px;
@@ -165,7 +165,7 @@ const getMessenger = ({
         border-top: 15px solid ${backgroundColor};
         border-bottom: 15px solid transparent;
         top: 50px;
-        ${position === 'left'
+        ${side === 'left'
             ? css`
                   border-left: 15px solid transparent;
                   border-right: 15px solid ${backgroundColor};
@@ -179,22 +179,16 @@ const getMessenger = ({
     }
 `;
 
-const getSaysStyles = ({
-    variant,
-    position,
-    backgroundColor,
-    textColor,
-    nameColor,
-    characterPictureRadius,
-    hasPicture,
-}: GetSaysStylesProps) => {
-    const common = getCommon({ backgroundColor, textColor, nameColor, characterPictureRadius, position });
+const getSaysStyles = (props: GetSaysStylesProps) => {
+    const { variant, side, backgroundColor, textColor, nameColor, characterPictureRadius, hasPicture } = props;
+
+    const common = getCommon({ backgroundColor, textColor, nameColor, characterPictureRadius, side });
 
     if (variant === 'common') return common;
     if (variant === 'bigName')
-        return getBigName({ backgroundColor, textColor, nameColor, characterPictureRadius, position, hasPicture });
+        return getBigName({ backgroundColor, textColor, nameColor, characterPictureRadius, side, hasPicture });
     if (variant === 'messenger')
-        return getMessenger({ backgroundColor, textColor, nameColor, characterPictureRadius, position });
+        return getMessenger({ backgroundColor, textColor, nameColor, characterPictureRadius, side });
 
     return common;
 };

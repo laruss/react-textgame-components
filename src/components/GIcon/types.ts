@@ -1,10 +1,11 @@
+import { IconButtonOwnProps } from '@mui/material/IconButton/IconButton';
+import { TooltipProps } from '@mui/material/Tooltip';
 import React from 'react';
 
-export interface IconInterface {
-    onClick: () => void;
-    size: string | number;
+export interface IconInterface extends IconButtonOwnProps {
     title: string;
-    IconComponent?: React.ComponentType<any>;
-    isDisabled?: boolean;
-    style?: React.CSSProperties;
+    tooltipPlacement?: TooltipProps['placement'];
+    IconComponent: React.ComponentType<any>;
+    children?: undefined;
+    onClick?: () => any;
 }

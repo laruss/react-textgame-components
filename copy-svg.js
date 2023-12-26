@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 const copyFiles = (srcDir, destDir, fileExtension) => {
     fs.readdir(srcDir, (err, files) => {
@@ -24,9 +24,7 @@ const copyFiles = (srcDir, destDir, fileExtension) => {
 
 const commonPath = '/components/GImage';
 const srcDir = `./src${commonPath}`;
-const destDirCJS = `./dist/cjs${commonPath}`;
-const destDirESM = `./dist/esm${commonPath}`;
+const destDir = `./dist/${commonPath}`;
 const fileExtension = '.svg';
 
-copyFiles(srcDir, destDirCJS, fileExtension);
-copyFiles(srcDir, destDirESM, fileExtension);
+copyFiles(srcDir, destDir, fileExtension);

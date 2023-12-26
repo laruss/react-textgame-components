@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react';
 
-type UseLoadingProps = {
-    src: string | undefined;
-};
-
-const useLoading = ({ src }: UseLoadingProps) => {
+const useLoading = ({ src }: { src?: string }) => {
     const [imgSrc, setImgSrc] = useState<string>(src ?? '');
     const [isError, setIsError] = useState<boolean>(false);
     const [loaded, setLoaded] = useState(false);

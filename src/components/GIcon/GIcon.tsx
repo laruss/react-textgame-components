@@ -1,26 +1,24 @@
-import IconContainer, { DisabledIconContainer } from './IconContainer';
+import { IconButton, Tooltip } from '@mui/material';
+import { TooltipProps } from '@mui/material/Tooltip';
+import { useGContext } from '../GContext';
 import { IconInterface } from './types';
-import React from 'react';
-import GTooltip from '../GTooltip';
 
-const GIcon = ({ onClick, size, title, IconComponent, isDisabled, style = {} }: IconInterface) => {
-    size = typeof size === 'number' ? `${size}px` : size;
-
-    if (!IconComponent) return null;
-
-    if (isDisabled)
-        return (
-            <DisabledIconContainer size={size}>
-                <IconComponent fontSize='inherit' color='inherit' />
-            </DisabledIconContainer>
-        );
+const GIcon = (props: IconInterface) => {
+    const { icon } = useGContext();
+    const {
+        IconComponent,
+        onClick,
+        title,
+        tooltipPlacement = icon?.tooltipPlacement as TooltipProps['placement'],
+        ...otherProps
+    } = props;
 
     return (
-        <GTooltip title={title} placement={'right'}>
-            <IconContainer style={style} size={size} hoverColor='#5b5b5b' clickedColor='#949494'>
-                <IconComponent fontSize='inherit' color='inherit' onClick={onClick} />
-            </IconContainer>
-        </GTooltip>
+        <Tooltip title={title} placement={tooltipPlacement}>
+            <IconButton onClick={onClick} {...otherProps}>
+                <IconComponent />
+            </IconButton>
+        </Tooltip>
     );
 };
 

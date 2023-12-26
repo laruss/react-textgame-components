@@ -1,28 +1,34 @@
-import React from 'react';
+import { styled } from '@mui/material/styles';
 import iconSrc from './not-found.svg';
 import { ReactSVG } from 'react-svg';
 
-const style = {
-    maxWidth: '1920px',
-    maxHeight: '1080px',
-    backgroundColor: '#b0b0b0',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'absolute' as const,
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-};
+const Container = styled('div')`
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+`;
+
+const InnerContainer = styled('div')`
+    max-width: 1920px;
+    max-height: 1080px;
+    background-color: #b0b0b0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+`;
 
 const NotFound = () => {
     return (
-        <div style={{ position: 'relative', width: '100%', paddingTop: '56.25%' }}>
-            <div style={style}>
+        <Container>
+            <InnerContainer>
                 <ReactSVG src={iconSrc} style={{ height: '50px', width: '50px' }} />
-            </div>
-        </div>
+            </InnerContainer>
+        </Container>
     );
 };
 
