@@ -1,6 +1,6 @@
 {
     "name": "react-textgame-components",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Components from React Textgame Engine",
     "private": false,
     "type": "module",
@@ -38,14 +38,16 @@
         "prepublishOnly": "npm run prettier"
     },
     "dependencies": {
-        "@emotion/react": "^11.11.3",
         "@emotion/styled": "^11.11.0",
         "@mui/material": "^5.15.2",
         "framer-motion": "^10.16.16",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
         "react-loading-skeleton": "^3.3.1",
         "react-svg": "^16.1.32"
+    },
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "@emotion/react": "^11.11.3"
     },
     "devDependencies": {
         "@mui/icons-material": "^5.15.2",
