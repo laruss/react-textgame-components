@@ -1,4 +1,4 @@
-import { GBlock, GBlurText, GButton, GIcon, GImage, GInput, GMap, GMapHotspot, GSay, GVideo } from '../index.ts';
+import { GBlock, GBlurText, GButton, GIcon, GImage, GInput, GMap, GMapHotspot, GP, GSay, GVideo } from '../index.ts';
 import CloseIcon from '@mui/icons-material/Close';
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
             </GSay>
             <GVideo
                 src={'https://v1.cdnpk.net/videvo_files/video/partners0316/large_watermarked/h7975e5ac_MotionFlow6307_preview.mp4'} />
+            <GP>Hello</GP>
         </>
     );
 }

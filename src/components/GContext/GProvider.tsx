@@ -4,10 +4,10 @@ import GContext from './GContext';
 
 type GProviderProps = {
     children: ReactNode;
-    settings: IGContext;
+    settings?: IGContext;
 };
 
-const GProvider = ({ children, settings }: GProviderProps) => {
+const GProvider = ({ children, settings = {} }: GProviderProps) => {
     return <GContext.Provider value={settings}>{children}</GContext.Provider>;
 };
 
