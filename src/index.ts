@@ -13,7 +13,8 @@ import GProvider from './components/GContext';
 
 import { ButtonVariants } from './components/GButton/types';
 import { Effect } from './components/GBlock/types';
+import { IGContext } from 'components/GContext/types.ts';
 
 export { GProvider, GBlock, GBlurText, GButton, GImage, GIcon, GInput, GMap, GMapHotspot, GP, GSay, GVideo };
 
-export type { ButtonVariants, Effect, SayVariants, SaySideVariants };
+export type { ButtonVariants, Effect, SayVariants, SaySideVariants, IGContext };

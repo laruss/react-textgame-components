@@ -7,7 +7,12 @@
 
 Components for [react-textgame-engine](https://github.com/laruss/react-textgame).
 
-[**Live Demo**](https://laruss.github.io/react-textgame-components/)
+## TODO:
+
+- to add documentation
+- to fix readme
+- to fix demo
+- to add tests
 
 ## Installation:
 
