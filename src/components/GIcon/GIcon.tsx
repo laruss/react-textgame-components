@@ -15,9 +15,11 @@ const GIcon = (props: IconInterface) => {
 
     return (
         <Tooltip title={title} placement={tooltipPlacement}>
-            <IconButton onClick={onClick} {...otherProps}>
-                <IconComponent />
-            </IconButton>
+            <span>
+                <IconButton onClick={onClick} {...otherProps}>
+                    <IconComponent />
+                </IconButton>
+            </span>
         </Tooltip>
     );
 };
