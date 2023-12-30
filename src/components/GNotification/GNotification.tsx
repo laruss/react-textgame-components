@@ -18,6 +18,7 @@ const GNotification = (props: NotificationProps) => {
         variant = notification?.variant,
         closeTimeout = notification?.closeTimeout,
         onClick,
+        sx,
     } = props;
     const [isOpen, setIsOpen] = useState(open ?? false);
 
@@ -36,7 +37,9 @@ const GNotification = (props: NotificationProps) => {
 
     return (
         <Snackbar onClick={onClick} open={isOpen} anchorOrigin={anchorOrigin} className={'g-notification'}>
-            <Alert severity={variant}>{children}</Alert>
+            <Alert sx={sx} severity={variant}>
+                {children}
+            </Alert>
         </Snackbar>
     );
 };

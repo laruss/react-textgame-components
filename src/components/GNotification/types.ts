@@ -1,4 +1,4 @@
-import { AlertColor, SnackbarOrigin } from '@mui/material';
+import { AlertColor, SnackbarOrigin, SxProps } from '@mui/material';
 import { ReactNode } from 'react';
 
 export interface NotificationType {
@@ -11,4 +11,5 @@ export interface NotificationProps extends NotificationType {
     children: ReactNode;
     open?: boolean;
     onClick?: () => void;
+    sx?: SxProps;
 }

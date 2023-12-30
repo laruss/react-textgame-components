@@ -22,10 +22,10 @@ const LinkContainer = styled('span')<{ variant: LinkVariants }>`
 
 const GLink = (props: LinkProps) => {
     const { link } = useGContext();
-    const { onClick, children, variant = link?.variant, style = {} } = props;
+    const { onClick, children, variant = link?.variant, sx = {} } = props;
 
     return (
-        <LinkContainer onClick={onClick} variant={variant as LinkVariants} style={style}>
+        <LinkContainer onClick={onClick} variant={variant as LinkVariants} sx={sx}>
             {children}
         </LinkContainer>
     );
