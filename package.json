@@ -1,6 +1,6 @@
 {
     "name": "react-textgame-components",
-    "version": "0.1.5",
+    "version": "0.2.0",
     "description": "Components from React Textgame Engine",
     "private": false,
     "type": "module",

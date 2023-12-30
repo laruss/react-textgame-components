@@ -1,4 +1,6 @@
 import { TooltipProps } from '@mui/material/Tooltip';
+import { NotificationType } from 'components/GNotification/types.ts';
+import { LinkVariants } from '../GLink/types.ts';
 import { Effect, LoadOn } from '../GBlock/types.ts';
 import { IGVideo } from '../GVideo/types';
 import { ButtonVariants } from '../GButton/types';
@@ -23,6 +25,10 @@ export interface IGContext {
             restrictWhiteSpaces?: string;
         };
     };
+    link?: {
+        variant?: LinkVariants;
+    };
+    notification?: NotificationType;
     say?: {
         variant?: SayVariants;
         side?: SaySideVariants;

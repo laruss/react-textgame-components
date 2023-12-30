@@ -1,4 +1,17 @@
-import { GBlock, GBlurText, GButton, GIcon, GImage, GInput, GMap, GMapHotspot, GP, GSay, GVideo } from '../index.ts';
+import {
+    GBlock,
+    GBlurText,
+    GButton,
+    GIcon,
+    GImage,
+    GInput,
+    GLink,
+    GMap,
+    GMapHotspot, GNotification,
+    GP,
+    GSay,
+    GVideo,
+} from '../index.ts';
 import CloseIcon from '@mui/icons-material/Close';
 
 function App() {
@@ -11,6 +24,8 @@ function App() {
             <GBlurText text={'Test'} showOnClick />
             <GIcon title={'Hello'} IconComponent={CloseIcon} />
             <GImage src={'https://via.placeholder.com/150'} />
+            <GLink onClick={() => {alert('GLINK CLICKED')}}>GLink</GLink>
+            <GNotification open={true}>Test Notification</GNotification>
             <GInput callback={(value) => console.log(value)} />
             <GMap image={'https://picsum.photos/200/300'} hotspots={[
                 { x: 10, y: 10, element: <GMapHotspot caption={'Hello'} callback={() => console.log('hello')} /> },
