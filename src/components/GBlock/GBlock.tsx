@@ -26,17 +26,14 @@ const GBlock = (props: GBlockProps) => {
     );
 
     return (
-        <Box
-            className={`g-block ${className || ''}`}
-            sx={{ paddingBottom: 40, position: 'relative', ...sx }}
-        >
-            {
-                isShown ? (
-                    <motion.div {...motionProps}>{children}</motion.div>
-                ) : (
-                    <GButton className='g-block-button' onClick={() => setIsShown(true)}>{buttonName}</GButton>
-                )
-            }
+        <Box className={`g-block ${className || ''}`} sx={{ paddingBottom: 40, position: 'relative', ...sx }}>
+            {isShown ? (
+                <motion.div {...motionProps}>{children}</motion.div>
+            ) : (
+                <GButton className='g-block-button' onClick={() => setIsShown(true)}>
+                    {buttonName}
+                </GButton>
+            )}
         </Box>
     );
 };

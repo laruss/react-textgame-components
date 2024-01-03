@@ -49,16 +49,20 @@ const GSay = (props: GSayProps) => {
         blockEffect,
     } = props;
 
-    const styles = useMemo(() => getSaysStyles({
-        variant,
-        side,
-        backgroundColor,
-        textColor,
-        nameColor,
-        characterPictureRadius,
-        hasPicture: Boolean(characterPicture),
-        hasName: Boolean(characterName),
-    }), []);
+    const styles = useMemo(
+        () =>
+            getSaysStyles({
+                variant,
+                side,
+                backgroundColor,
+                textColor,
+                nameColor,
+                characterPictureRadius,
+                hasPicture: Boolean(characterPicture),
+                hasName: Boolean(characterName),
+            }),
+        [backgroundColor, characterName, characterPicture, characterPictureRadius, nameColor, side, textColor, variant],
+    );
 
     const CharInfo_ = (
         <CharInfo
@@ -78,11 +82,7 @@ const GSay = (props: GSayProps) => {
 
     return (
         <GBlock className={'g-say-block'} loadOn='scroll' effect={effect} sx={{ paddingBottom: 0 }}>
-            <Container
-                className={`g-say-container ${className || ''}`}
-                customStyle={styles}
-                sx={sx}
-            >
+            <Container className={`g-say-container ${className || ''}`} customStyle={styles} sx={sx}>
                 {(side === 'left' || variant === 'messenger') && CharInfo_}
                 {(side === 'left' || variant === 'messenger') && Border}
                 <div className={'g-say-text-container'}>{children as ReactNode}</div>

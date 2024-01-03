@@ -5,7 +5,7 @@ import { NotificationProps } from './types.ts';
 import { forwardRef, useEffect, useState } from 'react';
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+    return <MuiAlert elevation={6} ref={ref} variant='filled' {...props} />;
 });
 
 const GNotification = (props: NotificationProps) => {
@@ -37,17 +37,8 @@ const GNotification = (props: NotificationProps) => {
     }, [open]);
 
     return (
-        <Snackbar
-            onClick={onClick}
-            open={isOpen}
-            anchorOrigin={anchorOrigin}
-            className={'g-notification-snackbar'}
-        >
-            <Alert
-                className={`g-notification ${className || ''}`}
-                sx={sx}
-                severity={variant}
-            >
+        <Snackbar onClick={onClick} open={isOpen} anchorOrigin={anchorOrigin} className={'g-notification-snackbar'}>
+            <Alert className={`g-notification ${className || ''}`} sx={sx} severity={variant}>
                 {children}
             </Alert>
         </Snackbar>

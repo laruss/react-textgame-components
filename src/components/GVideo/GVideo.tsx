@@ -7,6 +7,7 @@ const GVideo = (props: GVideoProps) => {
     const { video } = useGContext();
 
     const {
+        className,
         src,
         autoPlay = video?.autoPlay as boolean,
         loop = video?.loop as boolean,
@@ -18,7 +19,7 @@ const GVideo = (props: GVideoProps) => {
     const type = useMemo(() => `video/${src.slice(src.lastIndexOf('.') + 1)}`, [src]);
 
     return (
-        <VideoContainer sx={sx}>
+        <VideoContainer className={`g-video ${className ? className : ''}`} sx={sx}>
             <video width={width} autoPlay={autoPlay} loop={loop} controls={controls} muted={muted}>
                 <source src={src} type={type} />
             </video>

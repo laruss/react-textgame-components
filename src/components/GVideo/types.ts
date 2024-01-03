@@ -9,6 +9,7 @@ export interface IGVideo {
 }
 
 export interface GVideoProps extends IGVideo {
+    className?: string;
     src: string;
     sx?: SxProps;
 }

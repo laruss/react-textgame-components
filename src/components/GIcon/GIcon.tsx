@@ -17,11 +17,7 @@ const GIcon = (props: IconInterface) => {
     return (
         <Tooltip className='g-icon-tooltip' title={title} placement={tooltipPlacement}>
             <span>
-                <IconButton
-                    className={`g-icon-button ${className || ''}`}
-                    onClick={onClick}
-                    {...otherProps}
-                >
+                <IconButton className={`g-icon-button ${className || ''}`} onClick={onClick} {...otherProps}>
                     <IconComponent className='g-icon' />
                 </IconButton>
             </span>

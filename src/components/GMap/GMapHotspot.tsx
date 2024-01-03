@@ -8,12 +8,7 @@ const GMapHotspot = (props: GMapHotspotProps): React.ReactElement<'GMapHotspot',
     const { className, buttonVariant = defaultBV, caption, callback, sx } = props;
 
     return (
-        <GButton
-            className={`g-map-hotspot ${className || ''}`}
-            onClick={callback}
-            variant={buttonVariant}
-            sx={sx}
-        >
+        <GButton className={`g-map-hotspot ${className || ''}`} onClick={callback} variant={buttonVariant} sx={sx}>
             {caption}
         </GButton>
     );

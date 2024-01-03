@@ -7,9 +7,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         link: {
             variant: 'textLike',
         },
-        say: {
-            variant: 'bigName'
-        }
+        // say: {
+        //     variant: 'bigName'
+        // }
     }}>
         <App />
     </GProvider>,
