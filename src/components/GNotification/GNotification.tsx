@@ -12,6 +12,7 @@ const GNotification = (props: NotificationProps) => {
     const { notification } = useGContext();
 
     const {
+        className,
         children,
         open,
         anchorOrigin = notification?.anchorOrigin,
@@ -36,8 +37,8 @@ const GNotification = (props: NotificationProps) => {
     }, [open]);
 
     return (
-        <Snackbar onClick={onClick} open={isOpen} anchorOrigin={anchorOrigin} className={'g-notification'}>
-            <Alert sx={sx} severity={variant}>
+        <Snackbar onClick={onClick} open={isOpen} anchorOrigin={anchorOrigin} className={'g-notification-snackbar'}>
+            <Alert className={`g-notification ${className || ''}`} sx={sx} severity={variant}>
                 {children}
             </Alert>
         </Snackbar>

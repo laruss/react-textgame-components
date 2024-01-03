@@ -18,6 +18,7 @@ export interface GInputProps extends BaseProps {
     buttonCaption?: string;
     buttonVariant?: ButtonVariants;
     callback: (value: any) => void;
+    className?: string;
     confirmOnEnter?: boolean;
     disableAfterConfirm?: boolean;
     placeholder?: string;

@@ -17,12 +17,12 @@ const getCommon = ({
     border: black solid;
     background-color: ${backgroundColor};
     overflow: hidden;
-    .char-info-delimiter {
+    .g-say-char-info-delimiter {
         border: ${backgroundColor} solid;
         filter: invert(100%);
         mix-blend-mode: difference;
     }
-    .char-info-container {
+    .g-say-char-info-container {
         display: flex;
         flex-direction: column-reverse;
         font-weight: bold;
@@ -38,7 +38,7 @@ const getCommon = ({
     img {
         border-radius: ${characterPictureRadius};
     }
-    .text-container {
+    .g-say-text-container {
         padding: 10px;
         width: 100%;
         color: ${textColor};
@@ -59,13 +59,13 @@ const getBigName = ({
     gap: 10px;
     margin-top: 80px;
     position: relative;
-    .char-info-container {
+    .g-say-char-info-container {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         max-width: 200px;
     }
-    .char-info-name {
+    .g-say-char-info-name {
         position: absolute;
         font-size: 150%;
         color: ${nameColor};
@@ -78,7 +78,7 @@ const getBigName = ({
         border-radius: ${characterPictureRadius};
         border: black solid;
     }
-    .text-container {
+    .g-say-text-container {
         margin: ${hasPicture ? '50px' : 'auto'};
         border-radius: 15px;
         background: ${backgroundColor};
@@ -88,7 +88,7 @@ const getBigName = ({
         font-weight: 900;
         position: relative;
     }
-    .text-container:before {
+    .g-say-text-container:before {
         content: '';
         width: 0;
         height: 0;
@@ -124,19 +124,19 @@ const getMessenger = ({
     gap: 10px;
     margin-top: 40px;
     position: relative;
-    .char-info-container {
+    .g-say-char-info-container {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
     }
-    .char-info-name {
+    .g-say-char-info-name {
         position: absolute;
         color: ${nameColor};
         top: -35px;
         overflow: auto;
         border-bottom: black solid;
     }
-    .char-info-image {
+    .g-say-char-info-image {
         width: 100px;
         height: 100px;
         overflow: hidden;
@@ -144,9 +144,9 @@ const getMessenger = ({
         border: black solid;
     }
     img {
-        transform: scale(1.55);
+        transform: scale(1g-say-55);
     }
-    .text-container {
+    .g-say-text-container {
         max-width: 70%;
         min-width: 200px;
         min-height: 100px;
@@ -155,9 +155,9 @@ const getMessenger = ({
         color: ${textColor};
         padding: 10px 20px;
         z-index: 2;
-        box-shadow: 0 2px 1px 0 rgba(93, 196, 82, 0.5);
+        box-shadow: 0 2px 1px 0 rgba(93, 196, 82, 0g-say-5);
     }
-    .text-container:before {
+    .g-say-text-container:before {
         content: '';
         width: 0;
         height: 0;

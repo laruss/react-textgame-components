@@ -6,6 +6,7 @@ import { IconInterface } from './types';
 const GIcon = (props: IconInterface) => {
     const { icon } = useGContext();
     const {
+        className,
         IconComponent,
         onClick,
         title,
@@ -14,10 +15,10 @@ const GIcon = (props: IconInterface) => {
     } = props;
 
     return (
-        <Tooltip title={title} placement={tooltipPlacement}>
+        <Tooltip className='g-icon-tooltip' title={title} placement={tooltipPlacement}>
             <span>
-                <IconButton onClick={onClick} {...otherProps}>
-                    <IconComponent />
+                <IconButton className={`g-icon-button ${className || ''}`} onClick={onClick} {...otherProps}>
+                    <IconComponent className='g-icon' />
                 </IconButton>
             </span>
         </Tooltip>

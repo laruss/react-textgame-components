@@ -15,6 +15,7 @@ interface CommonProps {
 }
 
 export interface GSayProps extends CommonProps {
+    className?: string;
     blockEffect?: Effect;
     children: ReactNode;
     characterPictureRadius?: string;

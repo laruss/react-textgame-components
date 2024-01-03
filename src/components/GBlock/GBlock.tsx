@@ -11,6 +11,7 @@ const GBlock = (props: GBlockProps) => {
     const { block } = useGContext();
 
     const {
+        className,
         children,
         buttonName = block?.buttonName as string,
         loadOn = block?.loadOn as LoadOn,
@@ -25,9 +26,14 @@ const GBlock = (props: GBlockProps) => {
     );
 
     return (
-        <Box sx={{ paddingBottom: 40, position: 'relative', ...sx }}>
-            {!isShown ? <GButton onClick={() => setIsShown(true)}>{buttonName}</GButton> : null}
-            {isShown ? <motion.div {...motionProps}>{children}</motion.div> : null}
+        <Box className={`g-block ${className || ''}`} sx={{ paddingBottom: 40, position: 'relative', ...sx }}>
+            {isShown ? (
+                <motion.div {...motionProps}>{children}</motion.div>
+            ) : (
+                <GButton className='g-block-button' onClick={() => setIsShown(true)}>
+                    {buttonName}
+                </GButton>
+            )}
         </Box>
     );
 };

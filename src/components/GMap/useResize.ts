@@ -23,7 +23,7 @@ const useResize = ({ imageRef, width }: UseResizeProps) => {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [width]);
+    }, [width, handleResize]);
 
     return { dimensions, handleResize };
 };

@@ -13,16 +13,16 @@ const Container = styled('div')<{ customStyle: object }>(({ customStyle }) => ({
 
 const CharInfo = ({ characterName, characterPicture, sx, side, variant }: CharInfoProps) => {
     return (
-        <Box className='char-info-container' sx={sx}>
+        <Box className='g-say-char-info-container' sx={sx}>
             {characterName !== undefined && (
-                <Box sx={{ [side as string]: 0 }} className='char-info-name'>
+                <Box sx={{ [side as string]: 0 }} className='g-say-char-info-name'>
                     {characterName}
                 </Box>
             )}
-            {characterPicture !== undefined && <GImage className='char-info-image' src={characterPicture} />}
+            {characterPicture !== undefined && <GImage className='g-say-char-info-image' src={characterPicture} />}
             {characterPicture === undefined && variant === 'messenger' && (
                 <GImage
-                    className='char-info-image'
+                    className='g-say-char-info-image'
                     src='null'
                     imageStyles={{ transform: 'scale 2', marginTop: '15%' }}
                 />
@@ -35,6 +35,7 @@ const GSay = (props: GSayProps) => {
     const { say } = useGContext();
 
     const {
+        className,
         characterName,
         characterPicture,
         characterPictureRadius,
@@ -48,16 +49,20 @@ const GSay = (props: GSayProps) => {
         blockEffect,
     } = props;
 
-    const styles = getSaysStyles({
-        variant,
-        side,
-        backgroundColor,
-        textColor,
-        nameColor,
-        characterPictureRadius,
-        hasPicture: Boolean(characterPicture),
-        hasName: Boolean(characterName),
-    });
+    const styles = useMemo(
+        () =>
+            getSaysStyles({
+                variant,
+                side,
+                backgroundColor,
+                textColor,
+                nameColor,
+                characterPictureRadius,
+                hasPicture: Boolean(characterPicture),
+                hasName: Boolean(characterName),
+            }),
+        [backgroundColor, characterName, characterPicture, characterPictureRadius, nameColor, side, textColor, variant],
+    );
 
     const CharInfo_ = (
         <CharInfo
@@ -69,18 +74,18 @@ const GSay = (props: GSayProps) => {
         />
     );
 
-    const Border = useMemo(() => <div className='char-info-delimiter' />, []);
+    const Border = useMemo(() => <div className='g-say-char-info-delimiter' />, []);
     const effect = useMemo(
         () => (blockEffect ? blockEffect : side === 'left' ? 'leftSpring' : 'rightSpring'),
         [blockEffect, side],
     );
 
     return (
-        <GBlock loadOn='scroll' effect={effect} sx={{ paddingBottom: 0 }}>
-            <Container customStyle={styles} sx={sx}>
+        <GBlock className={'g-say-block'} loadOn='scroll' effect={effect} sx={{ paddingBottom: 0 }}>
+            <Container className={`g-say-container ${className || ''}`} customStyle={styles} sx={sx}>
                 {(side === 'left' || variant === 'messenger') && CharInfo_}
                 {(side === 'left' || variant === 'messenger') && Border}
-                <div className={'text-container'}>{children as ReactNode}</div>
+                <div className={'g-say-text-container'}>{children as ReactNode}</div>
                 {side === 'right' && variant !== 'messenger' && Border}
                 {side === 'right' && variant !== 'messenger' && CharInfo_}
             </Container>

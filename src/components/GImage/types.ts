@@ -6,5 +6,6 @@ export interface GameImageProps {
     sx?: SxProps;
     imageRadius?: string;
     className?: string;
+    imageClassName?: string;
     imageStyles?: React.CSSProperties;
 }

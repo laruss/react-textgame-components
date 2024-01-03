@@ -22,9 +22,9 @@ const InnerContainer = styled('div')`
     height: 100%;
 `;
 
-const NotFound = () => {
+const NotFound = ({ className }: { className?: string }) => {
     return (
-        <Container>
+        <Container className={`g-image-not-found ${className || ''}`}>
             <InnerContainer>
                 <ReactSVG src={iconSrc} style={{ height: '50px', width: '50px' }} />
             </InnerContainer>

@@ -8,6 +8,7 @@ export interface NotificationType {
 }
 
 export interface NotificationProps extends NotificationType {
+    className?: string;
     children: ReactNode;
     open?: boolean;
     onClick?: () => void;
