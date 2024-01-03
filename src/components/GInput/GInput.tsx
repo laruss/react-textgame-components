@@ -12,6 +12,7 @@ const GInput = (props: GInputProps) => {
     const { buttonVariant: defaultBV } = useGContext();
 
     const {
+        className,
         notify,
         allowOnlyNextSymbols,
         buttonCaption = 'Submit',
@@ -58,9 +59,9 @@ const GInput = (props: GInputProps) => {
     });
 
     return (
-        <Box sx={{ width: 'content-box' }}>
+        <Box className={`g-input-container`} sx={{ width: 'content-box' }}>
             <Input
-                className='game-input'
+                className={`g-input ${className || ''}`}
                 value={value}
                 type={type}
                 placeholder={placeholder}
@@ -71,6 +72,7 @@ const GInput = (props: GInputProps) => {
                 onKeyDown={handleKeyPress}
             />
             <GButton
+                className={`g-input-button`}
                 variant={buttonVariant}
                 sx={{ height: BUTTON_HEIGHT, ...styleButton }}
                 isDisabled={readOnly || _readOnly}

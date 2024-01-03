@@ -20,6 +20,7 @@ export type ButtonsObject = {
 };
 
 export type GButtonProps = {
+    className?: string;
     children: ReactNode;
     id?: string;
     isDisabled?: boolean;

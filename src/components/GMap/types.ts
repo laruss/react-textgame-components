@@ -3,6 +3,7 @@ import React, { RefObject } from 'react';
 import { ButtonVariants } from '../GButton/types';
 
 export type ImageHotspotsProps = {
+    className?: string;
     image: string;
     sx?: SxProps;
     hotspots: Array<{
@@ -18,6 +19,7 @@ export type UseResizeProps = {
 };
 
 export type GMapHotspotProps = {
+    className?: string;
     variant?: 'button'; // TODO: add 'image'
     buttonVariant?: ButtonVariants;
     caption: string;

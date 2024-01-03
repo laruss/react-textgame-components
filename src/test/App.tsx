@@ -17,7 +17,7 @@ import CloseIcon from '@mui/icons-material/Close';
 function App() {
     return (
         <>
-            <GBlock>
+            <GBlock loadOn={'button'}>
                 <p>Test</p>
             </GBlock>
             <GButton onClick={() => console.log('test')}>Test</GButton>
@@ -30,7 +30,9 @@ function App() {
             <GMap image={'https://picsum.photos/200/300'} hotspots={[
                 { x: 10, y: 10, element: <GMapHotspot caption={'Hello'} callback={() => console.log('hello')} /> },
             ]} />
-            <GSay>
+            <GSay
+                characterName={'Test'}
+            >
                 Hello
             </GSay>
             <GVideo
