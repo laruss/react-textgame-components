@@ -22,6 +22,9 @@ const defaults: IGContext = {
     link: {
         variant: 'default',
     },
+    map: {
+        logCoordinatesOnCLick: false,
+    },
     notification: {
         anchorOrigin: { horizontal: 'right', vertical: 'top' },
         closeTimeout: 3000,

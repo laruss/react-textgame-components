@@ -28,6 +28,9 @@ export interface IGContext {
     link?: {
         variant?: LinkVariants;
     };
+    map?: {
+        logCoordinatesOnCLick?: boolean;
+    };
     notification?: NotificationType;
     say?: {
         variant?: SayVariants;
