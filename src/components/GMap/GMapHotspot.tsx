@@ -5,10 +5,16 @@ import GButton from '../GButton';
 
 const GMapHotspot = (props: GMapHotspotProps): React.ReactElement<'GMapHotspot', any> => {
     const { buttonVariant: defaultBV } = useGContext();
-    const { className, buttonVariant = defaultBV, caption, callback, sx } = props;
+    const { buttonVariant = defaultBV, callback, caption, className, isDisabled, sx } = props;
 
     return (
-        <GButton className={`g-map-hotspot ${className || ''}`} onClick={callback} variant={buttonVariant} sx={sx}>
+        <GButton
+            className={`g-map-hotspot ${className || ''}`}
+            isDisabled={isDisabled}
+            onClick={callback}
+            sx={sx}
+            variant={buttonVariant}
+        >
             {caption}
         </GButton>
     );

@@ -23,6 +23,7 @@ export type GMapHotspotProps = {
     variant?: 'button'; // TODO: add 'image'
     buttonVariant?: ButtonVariants;
     caption: string;
+    isDisabled?: boolean;
     callback: () => any;
     sx?: SxProps;
 };
