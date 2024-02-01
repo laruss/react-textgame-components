@@ -1,23 +1,16 @@
-import { useGContext } from '../GContext';
-import React from 'react';
-import { GMapHotspotProps } from './types';
-import GButton from '../GButton';
+import ButtonHotspot from './ButtonHotspot.tsx';
+import ImageHotspot from './ImageHotspot.tsx';
+import { GMapHotspotProps, GMapHotspotType, HotspotType } from './types';
 
-const GMapHotspot = (props: GMapHotspotProps): React.ReactElement<'GMapHotspot', any> => {
-    const { buttonVariant: defaultBV } = useGContext();
-    const { buttonVariant = defaultBV, callback, caption, className, isDisabled, sx } = props;
-
-    return (
-        <GButton
-            className={`g-map-hotspot ${className || ''}`}
-            isDisabled={isDisabled}
-            onClick={callback}
-            sx={sx}
-            variant={buttonVariant}
-        >
-            {caption}
-        </GButton>
-    );
+const GMapHotspot = <T extends HotspotType>(props: GMapHotspotProps<T>): GMapHotspotType | null => {
+    if (props.variant === 'image') {
+        return <ImageHotspot {...props} />;
+    } else if (['button', undefined].includes(props.variant)) {
+        return <ButtonHotspot {...props} />;
+    } else {
+        console.error(`Invalid GMapHotspot variant: ${props.variant}`);
+        return null;
+    }
 };
 
 export default GMapHotspot;
