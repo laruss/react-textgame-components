@@ -1,4 +1,5 @@
 import { SxProps } from '@mui/material';
+import { TooltipProps as MuiTooltipProps } from '@mui/material/Tooltip';
 import { ReactElement, RefObject } from 'react';
 import { ButtonVariants } from '../GButton/types';
 
@@ -9,11 +10,14 @@ export type UseResizeProps = {
 
 export type GMapHotspotType = ReactElement<'GMapHotspot', any>;
 
+interface TooltipProps extends Omit<MuiTooltipProps, 'children'> {}
+
 type BaseHotspotProps = {
     className?: string;
     isDisabled?: boolean;
     callback: () => any;
     sx?: SxProps;
+    tooltip?: TooltipProps;
 };
 
 type ButtonProps = {

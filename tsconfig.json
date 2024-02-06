@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2022",
     "useDefineForClassFields": true,
-    "lib": ["ES2022", "ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES2022", "ES2015", "ES6", "ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -12,7 +12,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "declaration": true,
-    "typeRoots": ["./dist/index.d.ts"],
+    "types": ["jest"],
+    "typeRoots": ["./dist/index.d.ts", "./node_modules/@types"],
     "noEmit": true,
     "jsx": "react-jsx",
 
@@ -25,5 +26,6 @@
     "baseUrl": "src"
   },
   "include": ["src/**/*"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx", "node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

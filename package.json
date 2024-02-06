@@ -1,6 +1,6 @@
 {
     "name": "react-textgame-components",
-    "version": "0.2.5",
+    "version": "0.3.0",
     "description": "Components from React Textgame Engine",
     "private": false,
     "type": "module",
@@ -30,30 +30,36 @@
     },
     "scripts": {
         "dev": "vite",
+        "test": "jest",
         "build": "tsc && vite build && node copy-svg.js",
+        "doc": "npx typedoc",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
         "preview": "vite preview",
-        "prepare": "npm run build",
+        "prepare": "npm run test && npm run build",
         "prepublishOnly": "npm run prettier"
     },
     "dependencies": {
         "@emotion/styled": "^11.11.0",
         "@mui/material": "^5.15.2",
+        "@types/es6-promise": "^3.3.0",
         "framer-motion": "^10.16.16",
         "react-loading-skeleton": "^3.3.1",
         "react-svg": "^16.1.32"
     },
     "peerDependencies": {
+        "@emotion/react": "^11.11.3",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "@emotion/react": "^11.11.3"
+        "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
         "@emotion/react": "^11.11.3",
         "@mui/icons-material": "^5.15.2",
+        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/react": "^14.2.1",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.11.16",
         "@types/react": "^18.2.43",
         "@types/react-dom": "^18.2.17",
         "@typescript-eslint/eslint-plugin": "^6.16.0",
@@ -65,7 +71,14 @@
         "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.5",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
         "prettier": "^3.1.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "ts-jest": "^29.1.2",
+        "typedoc": "^0.25.7",
+        "typedoc-plugin-markdown": "^3.17.1",
         "typescript": "^5.2.2",
         "vite": "^5.0.8",
         "vite-plugin-dts": "^3.7.0"

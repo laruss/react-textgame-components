@@ -9,6 +9,7 @@ const GButton = (props: GButtonProps) => {
     return (
         <ButtonContainer
             className={`g-button ${props.className || ''}`}
+            data-testid='g-button'
             variant={variant as ButtonVariants}
             isDisabled={isDisabled}
             sx={sx}

@@ -1,5 +1,4 @@
 import { TooltipProps } from '@mui/material/Tooltip';
-import { NotificationType } from 'components/GNotification/types.ts';
 import { LinkVariants } from '../GLink/types.ts';
 import { Effect, LoadOn } from '../GBlock/types.ts';
 import { IGVideo } from '../GVideo/types';
@@ -31,7 +30,6 @@ export interface IGContext {
     map?: {
         logCoordinatesOnCLick?: boolean;
     };
-    notification?: NotificationType;
     say?: {
         variant?: SayVariants;
         side?: SaySideVariants;

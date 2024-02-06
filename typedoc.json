@@ -1,0 +1,8 @@
+{
+  "out": "./docs",
+  "theme": "default",
+  "plugin": ["typedoc-plugin-markdown"],
+  "includes": "./src",
+  "exclude": ["**/*.(test|spec).tsx", "**/node_modules/**"],
+  "entryPoints": ["./src/index.ts"]
+}

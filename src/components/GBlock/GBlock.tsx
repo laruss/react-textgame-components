@@ -7,6 +7,21 @@ import { Effect, GBlockProps, LoadOn } from './types';
 import { defaultProps, effects } from './utils';
 import useIsShown from './useIsShown';
 
+/**
+ * GBlock component
+ * is a container for content that can be shown on button click or other event
+ * @param props - GBlockProps
+ * @constructor - returns GBlock component
+ * @example
+ * <GBlock loadOn="button" buttonName="Show more">
+ *     <div>Content</div>
+ * </GBlock>
+ * @returns GBlock component
+ * @see GBlockProps
+ * @see GButton
+ * @see useIsShown
+ * @see GContext
+ */
 const GBlock = (props: GBlockProps) => {
     const { block } = useGContext();
 
@@ -26,7 +41,11 @@ const GBlock = (props: GBlockProps) => {
     );
 
     return (
-        <Box className={`g-block ${className || ''}`} sx={{ paddingBottom: 40, position: 'relative', ...sx }}>
+        <Box
+            data-testid='g-block'
+            className={`g-block ${className || ''}`}
+            sx={{ paddingBottom: 40, position: 'relative', ...sx }}
+        >
             {isShown ? (
                 <motion.div {...motionProps}>{children}</motion.div>
             ) : (

@@ -7,7 +7,6 @@ import GIcon from './components/GIcon';
 import GInput from './components/GInput';
 import GLink, { LinkProps, LinkVariants } from './components/GLink';
 import GMap, { GMapHotspot } from './components/GMap';
-import GNotification from './components/GNotification';
 import GP from './components/GP';
 import GSay, { SaySideVariants, SayVariants } from './components/GSay';
 import GVideo from './components/GVideo';
@@ -32,7 +31,6 @@ export {
     GSay,
     GVideo,
     GLink,
-    GNotification,
 };
 
 export type { ButtonVariants, Effect, SayVariants, SaySideVariants, IGContext, LinkProps, LinkVariants };
