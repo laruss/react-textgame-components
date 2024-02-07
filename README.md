@@ -13,11 +13,6 @@
 
 - [Release notes](./CHANGELOG.md)
 
-### Interfaces
-
-- [IGContext](interfaces/IGContext.md)
-- [LinkProps](interfaces/LinkProps.md)
-
 ### Type Aliases
 
 - [ButtonVariants](modules.md#buttonvariants)
@@ -41,10 +36,12 @@
 - [GLink](modules.md#glink)
 - [GMap](modules.md#gmap)
 - [GMapHotspot](modules.md#gmaphotspot)
+- [GNotificationContainer](modules.md#gnotificationcontainer)
 - [GP](modules.md#gp)
 - [GProvider](modules.md#gprovider)
 - [GSay](modules.md#gsay)
 - [GVideo](modules.md#gvideo)
+- [useNotification](modules.md#usenotification)
 
 ## Type Aliases
 
@@ -54,7 +51,7 @@
 
 #### Defined in
 
-[src/components/GButton/types.ts:16](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GButton/types.ts#L16)
+[src/components/GButton/types.ts:16](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GButton/types.ts#L16)
 
 ___
 
@@ -64,7 +61,7 @@ ___
 
 #### Defined in
 
-[src/components/GBlock/types.ts:5](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GBlock/types.ts#L5)
+[src/components/GBlock/types.ts:5](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GBlock/types.ts#L5)
 
 ___
 
@@ -74,7 +71,7 @@ ___
 
 #### Defined in
 
-[src/components/GLink/types.ts:4](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GLink/types.ts#L4)
+[src/components/GLink/types.ts:4](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GLink/types.ts#L4)
 
 ___
 
@@ -84,7 +81,7 @@ ___
 
 #### Defined in
 
-[src/components/GSay/types.ts:7](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GSay/types.ts#L7)
+[src/components/GSay/types.ts:7](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GSay/types.ts#L7)
 
 ___
 
@@ -94,7 +91,7 @@ ___
 
 #### Defined in
 
-[src/components/GSay/types.ts:5](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GSay/types.ts#L5)
+[src/components/GSay/types.ts:5](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GSay/types.ts#L5)
 
 ## Variables
 
@@ -104,7 +101,7 @@ ___
 
 #### Defined in
 
-[src/components/GContext/GContext.tsx:5](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GContext/GContext.tsx#L5)
+[src/components/GContext/GContext.tsx:5](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GContext/GContext.tsx#L5)
 
 ## Functions
 
@@ -144,7 +141,7 @@ GBlock component
 
 #### Defined in
 
-[src/components/GBlock/GBlock.tsx:25](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GBlock/GBlock.tsx#L25)
+[src/components/GBlock/GBlock.tsx:25](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GBlock/GBlock.tsx#L25)
 
 ___
 
@@ -164,7 +161,7 @@ ___
 
 #### Defined in
 
-[src/components/GBlurText/GBlurText.tsx:5](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GBlurText/GBlurText.tsx#L5)
+[src/components/GBlurText/GBlurText.tsx:5](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GBlurText/GBlurText.tsx#L5)
 
 ___
 
@@ -184,7 +181,7 @@ ___
 
 #### Defined in
 
-[src/components/GButton/GButton.tsx:5](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GButton/GButton.tsx#L5)
+[src/components/GButton/GButton.tsx:5](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GButton/GButton.tsx#L5)
 
 ___
 
@@ -204,7 +201,7 @@ ___
 
 #### Defined in
 
-[src/components/GIcon/GIcon.tsx:6](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GIcon/GIcon.tsx#L6)
+[src/components/GIcon/GIcon.tsx:6](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GIcon/GIcon.tsx#L6)
 
 ___
 
@@ -224,7 +221,7 @@ ___
 
 #### Defined in
 
-[src/components/GImage/GImage.tsx:9](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GImage/GImage.tsx#L9)
+[src/components/GImage/GImage.tsx:9](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GImage/GImage.tsx#L9)
 
 ___
 
@@ -244,7 +241,7 @@ ___
 
 #### Defined in
 
-[src/components/GInput/GInput.tsx:11](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GInput/GInput.tsx#L11)
+[src/components/GInput/GInput.tsx:11](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GInput/GInput.tsx#L11)
 
 ___
 
@@ -264,7 +261,7 @@ ___
 
 #### Defined in
 
-[src/components/GLink/GLink.tsx:23](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GLink/GLink.tsx#L23)
+[src/components/GLink/GLink.tsx:23](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GLink/GLink.tsx#L23)
 
 ___
 
@@ -284,7 +281,7 @@ ___
 
 #### Defined in
 
-[src/components/GMap/GMap.tsx:13](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GMap/GMap.tsx#L13)
+[src/components/GMap/GMap.tsx:13](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GMap/GMap.tsx#L13)
 
 ___
 
@@ -310,7 +307,54 @@ ___
 
 #### Defined in
 
-[src/components/GMap/GMapHotspot.tsx:6](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GMap/GMapHotspot.tsx#L6)
+[src/components/GMap/GMapHotspot.tsx:6](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GMap/GMapHotspot.tsx#L6)
+
+___
+
+### GNotificationContainer
+
+▸ **GNotificationContainer**(`props`): `Element`
+
+GNotificationContainer component
+is a container for notifications
+
+DON'T FORGET TO IMPORT CSS FILE IN YOUR APP (react-textgame-components/dist/styles.css)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `props` | `ToastContainerProps` | ToastContainerProps |
+
+#### Returns
+
+`Element`
+
+GNotificationContainer component
+
+**`Example`**
+
+```ts
+<GNotificationContainer
+   position="top-right"
+   hideProgressBar={true}
+   theme="dark"
+   autoClose={5000}
+/>
+```
+
+**`See`**
+
+- ToastContainerProps
+- GContext
+- useNotification
+- ToastContainer
+- https://fkhadra.github.io/react-toastify/introduction/
+- https://fkhadra.github.io/react-toastify/api/toastcontainer
+
+#### Defined in
+
+[src/components/GNotification/GNotificationContainer.tsx:29](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GNotification/GNotificationContainer.tsx#L29)
 
 ___
 
@@ -333,7 +377,7 @@ game <p> tag
 
 #### Defined in
 
-[src/components/GP.tsx:6](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GP.tsx#L6)
+[src/components/GP.tsx:6](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GP.tsx#L6)
 
 ___
 
@@ -353,7 +397,7 @@ ___
 
 #### Defined in
 
-[src/components/GContext/GProvider.tsx:11](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GContext/GProvider.tsx#L11)
+[src/components/GContext/GProvider.tsx:11](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GContext/GProvider.tsx#L11)
 
 ___
 
@@ -373,7 +417,7 @@ ___
 
 #### Defined in
 
-[src/components/GSay/GSay.tsx:34](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GSay/GSay.tsx#L34)
+[src/components/GSay/GSay.tsx:34](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GSay/GSay.tsx#L34)
 
 ___
 
@@ -393,7 +437,56 @@ ___
 
 #### Defined in
 
-[src/components/GVideo/GVideo.tsx:6](https://github.com/laruss/react-textgame-components/blob/393a429/src/components/GVideo/GVideo.tsx#L6)
+[src/components/GVideo/GVideo.tsx:6](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GVideo/GVideo.tsx#L6)
+
+___
+
+### useNotification
+
+▸ **useNotification**(`options?`): `Object`
+
+Hook for showing notifications
+
+DON'T FORGET TO IMPORT CSS FILE IN YOUR APP (react-textgame-components/dist/styles.css)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `ToastOptions`\<`unknown`\> | options for the notification |
+
+#### Returns
+
+`Object`
+
+notify - function to show a notification
+
+| Name | Type |
+| :------ | :------ |
+| `notify` | (`content`: `ReactNode`) => `void` |
+
+**`Example`**
+
+```ts
+const { notify } = useNotification();
+notify(<div>Hello, world!</div>);
+```
+
+**`Example`**
+
+```ts
+const { notify } = useNotification({ autoClose: 10000 });
+notify('Hello, world!');
+```
+
+**`See`**
+
+- https://fkhadra.github.io/react-toastify/introduction/
+- https://fkhadra.github.io/react-toastify/api/toast
+
+#### Defined in
+
+[src/components/GNotification/useNotification.ts:21](https://github.com/laruss/react-textgame-components/blob/33d31b2/src/components/GNotification/useNotification.ts#L21)
 
 
 [npm-url]: https://www.npmjs.com/package/react-textgame-components

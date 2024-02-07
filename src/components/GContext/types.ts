@@ -1,4 +1,5 @@
 import { TooltipProps } from '@mui/material/Tooltip';
+import { ToastContainerProps } from 'react-toastify';
 import { LinkVariants } from '../GLink/types.ts';
 import { Effect, LoadOn } from '../GBlock/types.ts';
 import { IGVideo } from '../GVideo/types';
@@ -30,6 +31,7 @@ export interface IGContext {
     map?: {
         logCoordinatesOnCLick?: boolean;
     };
+    notification?: ToastContainerProps;
     say?: {
         variant?: SayVariants;
         side?: SaySideVariants;

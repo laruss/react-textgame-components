@@ -18,6 +18,12 @@ export default defineConfig({
                     react: 'React',
                     'react-dom': 'ReactDOM',
                 },
+
+                assetFileNames: ({name}) => {
+                    console.log('assetFileNames', name);
+
+                    return name;
+                },
             },
         },
         sourcemap: true,

@@ -1,6 +1,6 @@
 {
     "name": "react-textgame-components",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Components from React Textgame Engine",
     "private": false,
     "type": "module",
@@ -12,6 +12,10 @@
             "import": "./dist/index.es.js",
             "require": "./dist/index.umd.js",
             "types": "./dist/index.d.ts"
+        },
+        "./dist/style.css": {
+            "import": "./dist/style.css",
+            "require": "./dist/style.css"
         }
     },
     "author": "laruss",
@@ -45,7 +49,8 @@
         "@types/es6-promise": "^3.3.0",
         "framer-motion": "^10.16.16",
         "react-loading-skeleton": "^3.3.1",
-        "react-svg": "^16.1.32"
+        "react-svg": "^16.1.32",
+        "react-toastify": "^10.0.4"
     },
     "peerDependencies": {
         "@emotion/react": "^11.11.3",

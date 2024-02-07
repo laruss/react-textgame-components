@@ -16,6 +16,7 @@ package-lock.json
 index.html
 
 /src/test/**/*
+/docs/**/*
 
 # Editor directories and files
 .vscode/*

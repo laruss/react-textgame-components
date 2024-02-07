@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1] - 2024-02-07
+
+### Added
+- Added `GNotification` once again, used `react-toastify`.
+- Added `useNotification` hook to use `GNotification` easily.
+- Added tests and documentation for notification component.
+
 ## [0.3.0] - 2024-02-06
 
 ### Added

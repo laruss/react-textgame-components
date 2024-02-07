@@ -25,6 +25,11 @@ const defaults: IGContext = {
     map: {
         logCoordinatesOnCLick: false,
     },
+    notification: {
+        position: 'top-right',
+        hideProgressBar: false,
+        theme: 'dark',
+    },
     say: {
         variant: 'common',
         side: 'left',

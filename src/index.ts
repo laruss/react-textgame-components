@@ -1,3 +1,5 @@
+import './components/GNotification/styles.css';
+
 import GBlock from './components/GBlock';
 import GBlurText from './components/GBlurText';
 import GButton from './components/GButton';
@@ -7,6 +9,7 @@ import GIcon from './components/GIcon';
 import GInput from './components/GInput';
 import GLink, { LinkProps, LinkVariants } from './components/GLink';
 import GMap, { GMapHotspot } from './components/GMap';
+import GNotificationContainer, { useNotification } from './components/GNotification';
 import GP from './components/GP';
 import GSay, { SaySideVariants, SayVariants } from './components/GSay';
 import GVideo from './components/GVideo';
@@ -27,10 +30,12 @@ export {
     GInput,
     GMap,
     GMapHotspot,
+    GNotificationContainer,
     GP,
     GSay,
     GVideo,
     GLink,
+    useNotification,
 };
 
 export type { ButtonVariants, Effect, SayVariants, SaySideVariants, IGContext, LinkProps, LinkVariants };
